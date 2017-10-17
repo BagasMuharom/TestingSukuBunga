@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="ui container">
+        <h3 class="ui attached top block header">Testing</h3>
+        <div class="ui attached segment bottom">
+            Blok testing
+        </div>
+
+        <div class="ui top attached tabular menu">
+            <a class="item active" data-tab="first">Manual Testing</a>
+            <a class="item" data-tab="second">Automatic Testing</a>
+        </div>
+        <div class="ui bottom attached tab segment active" data-tab="first">
+            <div class="ui message">
+              <div class="header">
+                Apa itu manual testing ?
+              </div>
+              <p>Testing ini dilakukan dengan menginputkan satu persatu data yang diperlukan</p>
+            </div>
+            <p>Inputkan Data-Data dengan Lengkap</p>
+            <div class="ui four column grid">
+                <div class="row">
+                    <div class="column">
+                        <p>Likuiditas Perekonomian</p>
+                        <div class="ui action input">
+                            <select class="ui compact selection dropdown">
+                            <option value="all">Naik</option>
+                            <option value="all">Tetap</option>
+                            <option value="products">Turun</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <p>Tingkat Inflasi</p>
+                        <div class="ui action input">
+                            <select class="ui compact selection dropdown">
+                            <option value="all">Naik</option>
+                            <option value="all">Tetap</option>
+                            <option value="products">Turun</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <p>Pertumbuhan Ekonomi</p>
+                        <div class="ui action input">
+                            <select class="ui compact selection dropdown">
+                            <option value="all">Naik</option>
+                            <option value="all">Tetap</option>
+                            <option value="products">Turun</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <p>CAR</p>
+                        <div class="ui action input">
+                            <select class="ui compact selection dropdown">
+                            <option value="all">Naik</option>
+                            <option value="all">Tetap</option>
+                            <option value="products">Turun</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <p>LDR</p>
+                        <div class="ui action input">
+                            <select class="ui compact selection dropdown">
+                            <option value="all">Naik</option>
+                            <option value="all">Tetap</option>
+                            <option value="products">Turun</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <p>US Rate</p>
+                        <div class="ui action input">
+                            <select class="ui compact selection dropdown">
+                            <option value="all">Naik</option>
+                            <option value="all">Tetap</option>
+                            <option value="products">Turun</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <p>BI Rate</p>
+                        <div class="ui action input">
+                            <select class="ui compact selection dropdown">
+                            <option value="all">Naik</option>
+                            <option value="all">Tetap</option>
+                            <option value="products">Turun</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                          <button id="choose_file">Pilih Weak</button>
+                    </div>
+                    <div class="column">
+                        <button class="ui button">
+                          Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- akhir tab manual -->
+        <div class="ui bottom attached tab segment" data-tab="second">
+          <button id="choose_file">Pilih file</button>
+        </div>
+    </div>
+    <script>
+        window.jQuery = require('jquery')
+        window.$ = window.jQuery
+
+        let {dialog} = require('electron').remote
+
+        $('#choose_file').click((e) => {
+            dialog.showOpenDialog((fileNames) => {
+
+            });
+        })
+
+    </script>
+    <script src="../semantic/dist/semantic.min.js"></script>
+    <script type="text/javascript">
+        $('.menu .item').tab()
+    </script>
+</body>
+
+</html>
