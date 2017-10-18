@@ -2,3 +2,5 @@ node_modules
 semantic
 .vscode
 desktop.ini
+build
+dist
