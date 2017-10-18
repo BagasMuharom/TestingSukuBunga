@@ -1,3 +1,7 @@
 body {
     padding-top: 20px;
 }
+
+#hasil-testing-automatic {
+    display: none
+}

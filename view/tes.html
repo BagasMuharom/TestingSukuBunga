@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="choose_weight_manual">Pilih weight</button>
+
+    <script>
+        window.$ = require('jquery')
+        let {dialog} = require('electron').remote
+        let fs = require('fs')
+
+        $('#choose_weight_manual').click((e) => {
+            dialog.showOpenDialog((fileNames) => {
+                fs.readFile(fileNames[0], 'utf-8', (err, data) => {
+                    if(!err) {
+                        weight = []
+                        bias = Number(data.split('\n')[1])
+                        for(i in data.split('\n')[0].split(' ')) {
+                            weight.push(Number(data.split('\n')[0].split(' ')[i]))
+                        }
+                        console.log(weight)
+                        console.log(bias)
+                    }
+                })
+            });
+        })
+    </script>
+
+</body>
+</html>

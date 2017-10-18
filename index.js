@@ -3,7 +3,8 @@ const url = require('url')
 
 app.on('ready', () => {
     let win = new BrowserWindow({
-        resizable: false
+        minWidth: 800,
+        minHeight: 500
     })
     //win.setMenu(null)
     win.loadURL(url.format({
